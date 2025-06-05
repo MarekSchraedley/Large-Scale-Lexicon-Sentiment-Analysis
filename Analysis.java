@@ -25,7 +25,7 @@ public class Analysis {
     }
     public static void main(String[] args) {
         try {
-            var WordNetScanner = new Scanner(new File("Langdat/SentiWordNet_3.0.0.txt"));
+            var WordNetScanner = new Scanner(new File("SentiWordNet_3.0.0.txt"));
             Map<String, word> WordMap = new HashMap<>();
             while (WordNetScanner.hasNext()) {
                 String[] line = WordNetScanner.nextLine().split("\\s+");
@@ -38,7 +38,7 @@ public class Analysis {
                     i++;
                 }
             }
-            var CommonScentences = new Scanner(new File("Langdat/yelp_labelled.txt"));
+            var CommonScentences = new Scanner(new File("yelp_labelled.txt"));
             double successes = 0.0;
             int total = 0;
             String[] negation = {"no", "not", "neither", "never", "none", "nothing", "nor", "nobody", "doesnt", "havent", "nowhere", "wasnt", "dont", "wont", "cant", "never", "arent", "isnt", "werent", "couldnt", "mustnt", "shouldnt", "wouldnt", "didnt", "hasnt", "havent", "hadnt", "lack", "without", "hardly", "barely", "scarcely", "fail"};
@@ -55,7 +55,7 @@ public class Analysis {
                 boolean negated = false;
                 /*  PRINT LINES AND SCORES
                 for (int i = 0; i < line.length-1; i++) {
-                    System.out.print(line[i].substring(1));
+                    System.out.print(line[i]);
                     if (WordMap.get(line[i] + "#1") != null) {
                         System.out.print(WordMap.get(line[i] + "#1").getMyPosSentiment() + "|" + WordMap.get(line[i] + "#1").getMyNegSentiment());
                     }
