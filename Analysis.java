@@ -93,7 +93,7 @@ public class Analysis {
                 }
                 //System.out.println(); Spacing
             }
-            System.out.println(successes/total); // percent accuracy
+            System.out.println((successes/total)*100); // percent accuracy
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
